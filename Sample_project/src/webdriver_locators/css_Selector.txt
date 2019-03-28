@@ -159,7 +159,7 @@ HtmlSource:-->
 	Syntax:-->
 		parentnode  > childnode...
 
-		By.cssSelector("div[id='login_conainer'] >  input[type='text']")
+		By.cssSelector("div[id='login_conainer'] >  input")
 
 ====================================================================
 
@@ -176,3 +176,7 @@ Syntax:-->
 		parentnode  <space> childnode...
 
 		By.cssSelector("div[id='login_conainer']  input")
+		
+=========================================================		
+		
+		
