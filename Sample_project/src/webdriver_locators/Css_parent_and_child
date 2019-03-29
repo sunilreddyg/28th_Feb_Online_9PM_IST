@@ -89,9 +89,10 @@ Css Position syntax:-->
 				
 				By.cssSelector("select[id='ClassType'] > option:nth-child(2)")
 				
-				
-				
 ---------------------------------------------------------------->>
+
+
+
 	
 	
 	
