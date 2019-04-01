@@ -1,0 +1,49 @@
+Working with Links:--->>
+
+	
+	Note:--> In backend html source every link contains
+		tagname  <a> anchor, and unique property as "href".
+
+	Note:-> To identify links only we have two default locators available in selenium.
+			linktext   (and)   partiallinktext
+
+
+	linktext:--> Locator identify link using original name.
+	Partiallinktext:--> Locator identify link using original or partiallinkname.
+
+
+Example:--> Identify using original linkname.
+
+	HtmlSource:-->
+	<a   href="http://messenger.com"  >   Messenger </a>
+
+
+	Selenium Script:-->
+	driver.findElement(By.linktext("Messenger")).click();
+===================================================
+
+Example:--> Identify Using original linkname..
+
+	HtmlSource:-->
+	<a  href="http://instagram.com"   >
+		<span>  Instagram  </span>
+	</a>
+
+
+	Selenium Script:-->
+	driver.findElement(By.linktext("Instagram")).click();
+
+========================================================
+
+Example:--> identify link using partial linktext
+
+	<a   href="http://newjobs.com" >
+		<STRONG>  Selenium  Jobs </STRONG>
+		<span> In USA </a>
+	</a>
+
+
+	Note:--> In above html source link name available in two diff nodes, In this
+		situvation we need to follow Partial linktext as locator.
+=========================================================
+

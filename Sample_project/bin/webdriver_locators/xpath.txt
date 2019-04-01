@@ -1,0 +1,241 @@
+Xpath:-->
+	Xpath is a unique locator builder at webpages. It recognize object using native path
+	with in html source.
+
+
+	1. Absolute xpath
+	2. Relative xpath
+
+	Note:--> In Real environment every one follow relative path only, Because
+		time to time when requirement changes developer modify html souce.
+
+
+Xpath-Attribute:-->
+
+	htmlsource:-->
+		<input  id="email"  aria-label="Firstname" ></input>
+
+	Xpath-Attribute-Syntax:-->
+
+		//tagname[@Attributename='Attributevalue']
+
+
+		By.xpath("//input[@id='email']");
+		By.xpath("//input[@aria-label='Firstname']")
+
+===============================================>>
+
+	/      -->Root Node [Need to define when identification starts from HTML node..]
+	//    -->Child Node [Identification starts from  otherthan child node]
+	*      --> All object under chiild
+	tagname:--> only selected tag elements
+	[ ]    --> Each braces allow single attribute to define
+	@    --> only targets attributes
+
+=====================================================>>
+Xpath-text :-->
+	Identifing location at html page using text..
+	
+	htmlsource:-->
+		<div> Create Account </div>
+
+	Xpath-text-syntax:--->
+
+		//*[text( )='Element text']
+		//*[.='Element text']	
+
+
+	By.xpath("//*[text( )='Create Account']")
+	By.xpath("//*[.='Create Account']")
+=======================================================>>
+Example:-->  Target Element with parent Node. Identify location using xpath
+
+HtmlSource:-->
+
+	<div id="login_conainer"  class="demo">
+		<input id="9ju7yg876"  type="text">  ---->Target Element
+	</div>	
+
+
+	Xpath-Locator:-->
+
+		//div[@id='login_container']/input
+
+=======================================================
+Example:-->
+Recognize object when parent-element having duplicate child-elements..
+Htmlsource:--->
+
+<html>
+<body>
+	<div id="reg_login"  class="form">
+		<input id="sample" class="abc"></input>
+		<input id="sample" class="abc"></input>  ------>>>>TargetElement
+		<input id="sample" class="abc"></input>
+		<input id="sample" class="abc"></input>	
+	</div>
+</body>
+</html>
+
+
+	Xpath-Idenfication using duplicate nodes:-->    tagname[int position]
+
+	//div[@id='reg_login']/input[2]	
+============================================================
+Example:-->
+	Target location using partial attribute..
+
+
+	Manual Browser         :-->   <input  id="email_987jjhf"></input>
+	Automation Browser :-->   <input  id="email_34534"></input>
+
+
+	Syntax:-->
+		//tagname[contains(@Attributename,'Partial Attribute value')]
+
+		//input[contains(@id,'email')]
+==============================================================
+Example:--> target element with end characters
+
+	Manual Browser         :-->   <input  id="987jjhfemail"></input>
+	Automation Browser :-->   <input  id="34534email"></input>
+
+	Syntax:-->
+		//tagname[ends-with(@Attributename,'Attribute end characters')]
+
+		//input[ends-with(@id,'email')]
+
+=============================================================
+Example:--> target element with start characters
+
+	Manual Browser         :-->   <input  id="email_987jjhf"></input>
+	Automation Browser :-->   <input  id="email_34534"></input>
+
+
+	Syntax:-->
+		//tagname[starts-with(@Attributename,'Attribute start characters')]
+		
+		//input[starts-with(@id,'email')]
+==============================================================
+Example:--> Target element with parital text..
+
+	HtmlSource:-->
+		<div  class="Sbtn"  >
+			Jobs In
+			<strong> Hyderabad</strong>
+		</div>
+
+
+	Syntax:-->	
+		//tagname[contains(text(),'Parital element text')]
+
+		//strong[contains(text(),'Hyderabad')]
+=================================================================
+Example:--> Target location when element duplicate at html-source, Identify 
+	     location using duplicate index...
+
+
+	Syntax:-->
+			(xpath-expression)[int pos]
+
+
+
+<html>
+<body>
+	<div id="reg_container"  class="form">
+		<input id="email" type="text"></input>
+	</div>
+
+	<div id="reg_login"  class="form">
+		<input id="email" type="text"></input>  ------>>>>TargetElement
+	</div>
+</body>
+</html>
+
+
+
+	Syntax:-->
+			(//input[@id='email'])[2]
+==============================================================
+Example:-->  Target Location using xpath  [AND]  operator..
+
+
+	   //tagname[@Prop='Pvalue'  and   @Prop='pvalue']
+	  //tagname[@Prop='Pvalue'   and    text()='Element Text']
+
+
+	htmlsource:-->
+		<div   id="New_btn"    class="Account"  > Create Account </div>
+
+		//div[@id='New_btn'  and  @class="Account"]
+		//div[@id='New_btn'   and  text()='Create Account']	
+============================================================
+Example:-->  Target Location using xpath  [OR]  operator..
+
+	  //tagname[@Prop='Pvalue'  or   @Prop='pvalue']
+	  //tagname[@Prop='Pvalue'   or    text()='Element Text']
+
+
+	htmlsource:-->
+		<div   id="New_btn"    class="Account"  > Create Account </div>
+
+		//div[@id='New_btn'  or  @class="Account"]
+		//div[@id='New_btn'   or  text()='Create Account']	
+
+=============================================================
+Example:--> Target location using following-sibling node..
+	
+	Htmlsource:-->
+		<div   class="form">
+			<input id="sample" class="abc"></input>
+			<input class="form"></input>                 ------>>>>TargetElement	
+		</div>
+
+
+	Syntax:-->
+		
+		//input[@id='sample']/following-sibling::input
+
+====================================================
+Example:--> Target location using following sibling node when multiple sibling nodes are available
+
+	Htmlsource:-->
+		<div   class="form">
+			<input id="sample" class="abc"></input>
+			<span class="form"></span>
+			<input class="form"></input>
+			<input class="form"></input>                 ------>>>>TargetElement	
+		</div>
+
+
+	Syntax:-->
+		//input[@id='sample']/following-sibling::input[2]
+
+===========================================================
+Example:--> Target location using preceding-sibling node..
+	
+	Htmlsource:-->
+		<div   class="form">
+			<input class="form"></input>                 ------>>>>TargetElement	
+			<input id="sample" class="abc"></input>
+		</div>
+
+
+	Syntax:-->
+		
+		//input[@id='sample']/preceding-sibling::input
+==========================================================
+Example:--> Target location using following sibling node when multiple sibling nodes are available
+
+	Htmlsource:-->
+		<div   class="form">
+			<input class="form"></input>                 ------>>>>TargetElement	
+			<span class="form"></span>
+			<input class="form"></input>
+			<input id="sample" class="abc"></input>
+		</div>
+
+	Syntax:-->
+		//input[@id='sample']/preceding-sibling::input[2]
+=========================================================
+
