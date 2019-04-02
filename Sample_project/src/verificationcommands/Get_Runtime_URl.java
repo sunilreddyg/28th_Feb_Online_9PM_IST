@@ -37,7 +37,7 @@ public class Get_Runtime_URl {
 		NRI_link.click();
 		
 		//click NR forex rates link at NRI page
-		WebElement NR_forex_rates_link=driver.findElement(By.xpath("//a[@title='NR Forex rate applicable for Inward remittances']"));
+		WebElement NR_forex_rates_link=driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div[1]/div[3]/div[2]/div[2]/div/div[2]/div[1]/div/ul/li[3]/a"));
 		NR_forex_rates_link.click();
 		
 		
