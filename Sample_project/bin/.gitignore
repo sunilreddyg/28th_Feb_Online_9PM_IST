@@ -1,4 +1,7 @@
-/verificationcommands/
-/conditional_Statements/
 /validationcommands/
-/switchcommands/
+/variables/
+/verificationcommands/
+/webdriver_Scripting/
+/webdriver_locators/
+/mouse_and_keyboard_interactions/
+/robot_actions/

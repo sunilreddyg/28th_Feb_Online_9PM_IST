@@ -1,0 +1,28 @@
+Robot:-->
+	=> Robot is a java automation framework from  [AWT]
+	=> It support automation on native inputs  [Keyboard and mouse]
+	=> Robot can manage set of actions with mouse and keyboard at any
+	   interface platfrom..
+	
+	
+
+where robot action we can use in selenium:-->
+	
+	=> To handle window interfaces, Because selenium doesn't
+		interact with window interfaces...
+		
+	=> We can alos use native keyboard and mouse actions to perform
+		during automation.
+		
+		
+Any scenarios in selenium we must interact with window interface:-->
+
+	=> File uploading
+	=> File downloading
+		
+		
+Is there any tools can manage window interface automation:-->
+
+	=> Sikuli   [Image recognize automation tool]
+	=> AutoIT   [Window interface automation tool]	
+	
