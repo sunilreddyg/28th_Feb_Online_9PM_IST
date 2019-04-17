@@ -20,6 +20,8 @@ public class TypeText_in_Notepad_File {
 		robot.setAutoDelay(500);   //time in milli-seconds
 		
 		
+		robot.keyPress(KeyEvent.VK_SHIFT);
+		
 		//Type hello mindq
 		
 		robot.keyPress(KeyEvent.VK_H);
@@ -35,6 +37,8 @@ public class TypeText_in_Notepad_File {
 		robot.keyPress(KeyEvent.VK_N);
 		robot.keyPress(KeyEvent.VK_D);
 		robot.keyPress(KeyEvent.VK_Q);
+		
+		robot.keyRelease(KeyEvent.VK_SHIFT);
 		
 	}
 
