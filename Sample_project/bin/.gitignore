@@ -1,7 +1,9 @@
+/static_methods/
+/switchcommands/
 /validationcommands/
 /variables/
 /verificationcommands/
 /webdriver_Scripting/
 /webdriver_locators/
-/mouse_and_keyboard_interactions/
+/capturescreen/
 /robot_actions/
