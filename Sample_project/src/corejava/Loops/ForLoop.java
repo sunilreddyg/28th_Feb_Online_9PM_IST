@@ -1,6 +1,7 @@
 package corejava.Loops;
 
-public class ForLoop {
+public class ForLoop 
+{
 
 	public static void main(String[] args) 
 	{
