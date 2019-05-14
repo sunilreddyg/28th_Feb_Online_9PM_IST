@@ -7,7 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
-public class Group_elements {
+public class Group_elements 
+{
 
 	public static void main(String[] args) 
 	{
